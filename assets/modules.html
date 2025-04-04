@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Modules | CN University</title>
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="/images/ico/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <meta name="theme-color" content="#383430">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/main.js" defer></script>
+    <style>
+        /* CoinNation-inspired navigation styles */
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #685C4D;
+            margin-bottom: 2rem;
+        }
+        
+        .site-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .site-logo img {
+            max-height: 50px;
+            margin-right: 1rem;
+        }
+        
+        .site-logo h2 {
+            color: #B9A68B;
+            margin: 0;
+            border: none;
+            font-size: 1.5rem;
+        }
+        
+        .main-nav {
+            display: flex;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .main-nav li {
+            margin: 0 1rem;
+            position: relative;
+        }
+        
+        .main-nav a {
+            color: #B9A68B;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 0;
+            display: block;
+            transition: color 0.3s;
+        }
+        
+        .main-nav a:hover {
+            color: #066aab;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #4C4338;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 4px;
+            padding: 0.5rem 0;
+        }
+        
+        .dropdown-content a {
+            padding: 0.5rem 1rem;
+            display: block;
+        }
+        
+        .nav-item:hover .dropdown-content {
+            display: block;
+        }
+        
+        .book-call {
+            background-color: #066aab;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .book-call:hover {
+            background-color: #065a9b;
+        }
+        
+        /* Module container styling */
+        .modules-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        .module-full {
+            background-color: #4C4338;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .module-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #685C4D;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .module-title {
+            color: #B9A68B;
+            margin: 0;
+        }
+        
+        .module-badge {
+            background-color: #066aab;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .module-content {
+            margin-bottom: 2rem;
+            color: #B9A68B;
+        }
+        
+        .module-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #383430;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .module-difficulty {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .difficulty-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #4CAF50;
+        }
+        
+        .difficulty-intermediate .difficulty-indicator {
+            background-color: #FFC107;
+        }
+        
+        .difficulty-advanced .difficulty-indicator {
+            background-color: #F44336;
+        }
+        
+        @media (min-width: 768px) {
+            .modules-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        /* Hero section */
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+            background-color: #383430;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #B9A68B;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #B9A68B;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .main-nav {
+                margin-top: 1rem;
+            }
+            
+            .main-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <div class="site-logo">
+            <img src="/images/cn-university-logo.png" alt="CN University Logo">
+            <h2>CN University</h2>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li class="nav-item">
+                    <a href="/modules.html">Learning Modules</a>
+                    <div class="dropdown-content">
+                        <a href="/modules/1">Introduction to ICP</a>
+                        <a href="/modules/2">First Canister</a>
+                        <a href="/modules/3">Working with Motoko</a>
+                        <a href="/modules/4">Web UIs with React</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Community</a>
+                    <div class="dropdown-content">
+                        <a href="#">OpenChat</a>
+                        <a href="#">YouTube</a>
+                        <a href="#">X Profile</a>
+                    </div>
+                </li>
+                <li><a href="/about.html">About</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="book-call">Start Learning</a>
+    </div>
+    
+    <div class="hero">
+        <h1>Learning Modules</h1>
+        <p>Master decentralized application development through our comprehensive curriculum</p>
+    </div>
+    
+    <main>
+        <section class="intro">
+            <h2>Available Modules</h2>
+            <p>Our curriculum is designed to take you from a complete beginner to an advanced ICP developer. Each module focuses on specific concepts and includes hands-on projects to reinforce your learning.</p>
+        </section>
+        
+        <div class="modules-container" id="modules-full-container">
+            <div class="loading">Loading modules...</div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 CN University. Built on the <a href="https://internetcomputer.org/" target="_blank" rel="noopener">Internet Computer</a>.</p>
+        <p class="canister-id">Canister ID: <span id="canister-id">c2pix-yaaaa-aaaah-ardha-cai</span></p>
+    </footer>
+    
+    <script>
+        // Sample module data for the modules page
+        document.addEventListener('DOMContentLoaded', function() {
+            const modulesContainer = document.getElementById('modules-full-container');
+            
+            // Sample detailed module data - In a real app, this would come from the canister
+            const detailedModules = [
+                {
+                    id: 1,
+                    title: 'Introduction to ICP',
+                    description: 'Learn the fundamentals of the Internet Computer Protocol, including its architecture, capabilities, and advantages over traditional cloud platforms.',
+                    content: 'This module covers the basic concepts of blockchain technology and how the Internet Computer extends these concepts to create a revolutionary platform for building and deploying applications. You will learn about canisters, cycles, and the unique features that make ICP stand out from other blockchain platforms.',
+                    difficulty: 'Beginner',
+                    duration: '2 hours',
+                    tokenReward: 50,
+                    prerequisites: 'None'
+                },
+                {
+                    id: 2,
+                    title: 'Creating Your First Canister',
+                    description: 'Build and deploy your first canister on the Internet Computer using the DFINITY Canister SDK.',
+                    content: 'In this module, you will set up your development environment and create a simple canister using both Motoko and Rust. You will learn how to build, deploy, and interact with your canister using the dfx command-line tool.',
+                    difficulty: 'Beginner',
+                    duration: '3 hours',
+                    tokenReward: 100,
+                    prerequisites: 'Module 1: Introduction to ICP'
+                },
+                {
+                    id: 3,
+                    title: 'Working with Motoko',
+                    description: 'Master the Motoko programming language, designed specifically for developing applications on the Internet Computer.',
+                    content: 'This module provides a comprehensive introduction to the Motoko programming language. You will learn about Motoko\'s type system, control structures, functions, and how to define and use actor classes. By the end of this module, you will be able to write complex Motoko code for your canisters.',
+                    difficulty: 'Intermediate',
+                    duration: '5 hours',
+                    tokenReward: 150,
+                    prerequisites: 'Module 2: Creating Your First Canister'
+                },
+                {
+                    id: 4,
+                    title: 'Building Web UIs with React',
+                    description: 'Learn how to create beautiful front-end interfaces for your ICP applications using React.',
+                    content: 'This module teaches you how to integrate React with Internet Computer canisters. You will learn how to build responsive user interfaces that interact with your backend canisters using the IC Agent library.',
+                    difficulty: 'Intermediate',
+                    duration: '4 hours',
+                    tokenReward: 150,
+                    prerequisites: 'Module 3: Working with Motoko, Basic knowledge of JavaScript'
+                }
+            ];
+            
+            // Clear loading message
+            modulesContainer.innerHTML = '';
+            
+            // Render each module
+            detailedModules.forEach(module => {
+                const difficultyClass = module.difficulty.toLowerCase() === 'intermediate' ? 'difficulty-intermediate' : 
+                                      module.difficulty.toLowerCase() === 'advanced' ? 'difficulty-advanced' : '';
+                
+                const moduleElement = document.createElement('div');
+                moduleElement.className = 'module-full';
+                moduleElement.innerHTML = `
+                    <div class="module-header">
+                        <h3 class="module-title">${module.title}</h3>
+                        <span class="module-badge">Module ${module.id}</span>
+                    </div>
+                    <div class="module-content">
+                        <p><strong>${module.description}</strong></p>
+                        <p>${module.content}</p>
+                    </div>
+                    <div class="module-meta">
+                        <div class="module-difficulty ${difficultyClass}">
+                            <span class="difficulty-indicator"></span>
+                            <span>${module.difficulty}</span>
+                        </div>
+                        <div class="module-duration">Duration: ${module.duration}</div>
+                        <div class="module-reward">Reward: <span class="token-reward">${module.tokenReward} Tokens</span></div>
+                    </div>
+                    <div class="module-prerequisites">
+                        <p><strong>Prerequisites:</strong> ${module.prerequisites}</p>
+                    </div>
+                    <div class="cta-container" style="justify-content: flex-end;">
+                        <a href="/modules/${module.id}" class="cta-button">Start Module</a>
+                    </div>
+                `;
+                
+                modulesContainer.appendChild(moduleElement);
+            });
+        });
+    </script>
+</body>
+</html> 

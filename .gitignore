@@ -1,0 +1,38 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ICP/Dfinity specific
+.dfx/
+node_modules/
+.vessel/
+.env
+canister_ids.json
+declarations/
+
+# Build artifacts
+*.wasm
+dist/
+build/
+
+# Local configurations
+local/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.bak
+*.orig
+.DS_Store 

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CN University - Learn Decentralized App Development</title>
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="/images/ico/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <meta name="theme-color" content="#383430">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/main.js" defer></script>
+    <style>
+        /* CoinNation-inspired navigation styles */
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #685C4D;
+            margin-bottom: 2rem;
+        }
+        
+        .site-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .site-logo img {
+            max-height: 50px;
+            margin-right: 1rem;
+        }
+        
+        .site-logo h2 {
+            color: #B9A68B;
+            margin: 0;
+            border: none;
+            font-size: 1.5rem;
+        }
+        
+        .main-nav {
+            display: flex;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .main-nav li {
+            margin: 0 1rem;
+            position: relative;
+        }
+        
+        .main-nav a {
+            color: #B9A68B;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 0;
+            display: block;
+            transition: color 0.3s;
+        }
+        
+        .main-nav a:hover {
+            color: #066aab;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #4C4338;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 4px;
+            padding: 0.5rem 0;
+        }
+        
+        .dropdown-content a {
+            padding: 0.5rem 1rem;
+            display: block;
+        }
+        
+        .nav-item:hover .dropdown-content {
+            display: block;
+        }
+        
+        .book-call {
+            background-color: #066aab;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .book-call:hover {
+            background-color: #065a9b;
+        }
+        
+        /* Adjustments for the hero section */
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+            background-color: #383430;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .main-nav {
+                margin-top: 1rem;
+            }
+            
+            .main-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <div class="site-logo">
+            <img src="/images/cn-university-logo.png" alt="CN University Logo">
+            <h2>CN University</h2>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li class="nav-item">
+                    <a href="/modules.html">Learning Modules</a>
+                    <div class="dropdown-content">
+                        <a href="/modules/1">Introduction to ICP</a>
+                        <a href="/modules/2">First Canister</a>
+                        <a href="/modules/3">Working with Motoko</a>
+                        <a href="/modules/4">Web UIs with React</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Community</a>
+                    <div class="dropdown-content">
+                        <a href="#">OpenChat</a>
+                        <a href="#">YouTube</a>
+                        <a href="#">X Profile</a>
+                    </div>
+                </li>
+                <li><a href="/about.html">About</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="book-call">Start Learning</a>
+    </div>
+    
+    <div class="hero">
+        <h1>Welcome to CN University</h1>
+        <p>Your journey to mastering decentralized application development on the Internet Computer</p>
+        <div class="cta-container">
+            <a href="/modules.html" class="cta-button">Start Learning</a>
+            <a href="/about.html" class="cta-button secondary">Learn More</a>
+        </div>
+    </div>
+    
+    <main>
+        <section class="intro">
+            <h2>What is CN University?</h2>
+            <p>CN University is an interactive learning platform designed to teach you how to build, test, and deploy decentralized applications on the Internet Computer Protocol (ICP).</p>
+            <p>Through our 12-module curriculum, you'll gain hands-on experience with the tools and concepts needed to become a proficient ICP developer.</p>
+        </section>
+        
+        <section class="modules-preview">
+            <h2>Learning Modules</h2>
+            <div class="module-cards" id="module-cards-container">
+                <!-- Module cards will be loaded dynamically via JavaScript -->
+                <div class="loading">Loading modules...</div>
+            </div>
+        </section>
+        
+        <section class="rewards">
+            <h2>Earn While You Learn</h2>
+            <p>Complete modules to earn tokens and unlock special rewards. Track your progress and showcase your achievements!</p>
+            <div class="rewards-visualization">
+                <div class="token-count">0 <span>Tokens</span></div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 0%"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 CN University. Built on the <a href="https://internetcomputer.org/" target="_blank" rel="noopener">Internet Computer</a>.</p>
+        <p class="canister-id">Canister ID: <span id="canister-id">c2pix-yaaaa-aaaah-ardha-cai</span></p>
+    </footer>
+</body>
+</html>

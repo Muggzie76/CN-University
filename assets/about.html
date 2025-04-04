@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | CN University</title>
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="/images/ico/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <meta name="theme-color" content="#383430">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/main.js" defer></script>
+    <style>
+        /* CoinNation-inspired navigation styles */
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #685C4D;
+            margin-bottom: 2rem;
+        }
+        
+        .site-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .site-logo img {
+            max-height: 50px;
+            margin-right: 1rem;
+        }
+        
+        .site-logo h2 {
+            color: #B9A68B;
+            margin: 0;
+            border: none;
+            font-size: 1.5rem;
+        }
+        
+        .main-nav {
+            display: flex;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .main-nav li {
+            margin: 0 1rem;
+            position: relative;
+        }
+        
+        .main-nav a {
+            color: #B9A68B;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 0;
+            display: block;
+            transition: color 0.3s;
+        }
+        
+        .main-nav a:hover {
+            color: #066aab;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #4C4338;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 4px;
+            padding: 0.5rem 0;
+        }
+        
+        .dropdown-content a {
+            padding: 0.5rem 1rem;
+            display: block;
+        }
+        
+        .nav-item:hover .dropdown-content {
+            display: block;
+        }
+        
+        .book-call {
+            background-color: #066aab;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .book-call:hover {
+            background-color: #065a9b;
+        }
+        
+        /* Hero section */
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+            background-color: #383430;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #B9A68B;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #B9A68B;
+        }
+        
+        /* Team and features styling */
+        .team-section {
+            margin-top: 2rem;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .team-member {
+            text-align: center;
+            background-color: #4C4338;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+        
+        .team-member h3 {
+            margin: 0.5rem 0;
+            color: #B9A68B;
+        }
+        
+        .team-member .role {
+            color: #878785;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background-color: #4C4338;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            color: #B9A68B;
+        }
+        
+        .feature-card h3 {
+            color: #B9A68B;
+            margin-top: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .main-nav {
+                margin-top: 1rem;
+            }
+            
+            .main-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <div class="site-logo">
+            <img src="/images/cn-university-logo.png" alt="CN University Logo">
+            <h2>CN University</h2>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li class="nav-item">
+                    <a href="/modules.html">Learning Modules</a>
+                    <div class="dropdown-content">
+                        <a href="/modules/1">Introduction to ICP</a>
+                        <a href="/modules/2">First Canister</a>
+                        <a href="/modules/3">Working with Motoko</a>
+                        <a href="/modules/4">Web UIs with React</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Community</a>
+                    <div class="dropdown-content">
+                        <a href="#">OpenChat</a>
+                        <a href="#">YouTube</a>
+                        <a href="#">X Profile</a>
+                    </div>
+                </li>
+                <li><a href="/about.html">About</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="book-call">Start Learning</a>
+    </div>
+    
+    <div class="hero">
+        <h1>About CN University</h1>
+        <p>Our mission, vision, and the team behind the platform</p>
+    </div>
+    
+    <main>
+        <section class="intro">
+            <h2>Our Mission</h2>
+            <p>CN University was created with a simple yet ambitious mission: to make the Internet Computer Protocol accessible to developers of all skill levels. We believe in the transformative potential of decentralized applications and want to empower the next generation of builders to harness this technology.</p>
+            <p>By providing structured learning paths, interactive tutorials, and hands-on projects, we aim to lower the barrier to entry for ICP development and foster a vibrant community of innovators.</p>
+        </section>
+        
+        <section>
+            <h2>Why ICP?</h2>
+            <p>The Internet Computer represents a paradigm shift in how applications are built, deployed, and scaled. Unlike traditional cloud platforms, the Internet Computer offers:</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>True Decentralization</h3>
+                    <p>Applications run on a network of independent data centers around the world, eliminating central points of failure.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Reduced Complexity</h3>
+                    <p>No need to manage databases, servers, or middleware - everything runs in secure canisters.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Lower Costs</h3>
+                    <p>Pay only for the compute and storage you need, without the overhead of traditional cloud providers.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Enhanced Security</h3>
+                    <p>Built-in cryptographic security and autonomous operation help protect against common vulnerabilities.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Seamless Scalability</h3>
+                    <p>Applications can scale automatically as demand increases, without manual intervention.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Web Speed</h3>
+                    <p>Fast query calls and optimized chain operations deliver responsive user experiences.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="team-section">
+            <h2>Our Team</h2>
+            <p>CN University is built by a diverse team of developers, educators, and blockchain enthusiasts who share a passion for the Internet Computer ecosystem.</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="/images/team/placeholder.jpg" alt="Team Member">
+                    <h3>Alex Chen</h3>
+                    <p class="role">Founder & Lead Developer</p>
+                    <p>Alex has been building on ICP since its launch and has contributed to several key projects in the ecosystem.</p>
+                </div>
+                
+                <div class="team-member">
+                    <img src="/images/team/placeholder.jpg" alt="Team Member">
+                    <h3>Maria Rodriguez</h3>
+                    <p class="role">Curriculum Director</p>
+                    <p>With a background in computer science education, Maria designs our learning modules to be accessible yet comprehensive.</p>
+                </div>
+                
+                <div class="team-member">
+                    <img src="/images/team/placeholder.jpg" alt="Team Member">
+                    <h3>David Johnson</h3>
+                    <p class="role">Technical Content Creator</p>
+                    <p>David specializes in translating complex technical concepts into clear, approachable tutorials.</p>
+                </div>
+                
+                <div class="team-member">
+                    <img src="/images/team/placeholder.jpg" alt="Team Member">
+                    <h3>Sarah Kim</h3>
+                    <p class="role">Community Manager</p>
+                    <p>Sarah fosters our growing community of learners and facilitates collaboration among CN University users.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Get Involved</h2>
+            <p>CN University is an open platform that grows stronger with community involvement. Here's how you can contribute:</p>
+            <ul>
+                <li><strong>Complete modules</strong> and provide feedback to help us improve</li>
+                <li><strong>Share your projects</strong> built using knowledge gained from our platform</li>
+                <li><strong>Suggest new module topics</strong> that you'd like to see covered</li>
+                <li><strong>Contribute content</strong> if you have expertise in specific areas of ICP development</li>
+            </ul>
+            
+            <div class="cta-container">
+                <a href="/modules.html" class="cta-button">Start Learning</a>
+                <a href="https://github.com/cn-university" target="_blank" rel="noopener" class="cta-button secondary">GitHub Repository</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 CN University. Built on the <a href="https://internetcomputer.org/" target="_blank" rel="noopener">Internet Computer</a>.</p>
+        <p class="canister-id">Canister ID: <span id="canister-id">c2pix-yaaaa-aaaah-ardha-cai</span></p>
+    </footer>
+</body>
+</html> 
