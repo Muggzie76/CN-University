@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1A1914">
+    <title>CN University Admin Dashboard</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/admin.css">
+    
+    <!-- 
+        CN University Admin Dashboard
+        ----------------------------
+        This is the main admin interface for the CN University platform.
+        It provides tools for managing learning modules, user accounts,
+        admin permissions, and system monitoring.
+        
+        Version: 1.0.0
+        Date: April 3, 2023
+    -->
+</head>
+<body class="admin-body">
+    <!-- Header with logo and admin info -->
+    <header class="admin-header">
+        <div class="logo">
+            <img src="../images/icp-studio-logo.png" alt="CN University Logo" width="50">
+            <h1>CN University Admin</h1>
+        </div>
+        <div id="admin-user-info">
+            <span id="current-admin">John Doe</span> | 
+            <a href="#" id="logout-btn">Logout</a>
+        </div>
+    </header>
+
+    <div class="admin-container">
+        <!-- Sidebar Navigation -->
+        <nav class="admin-sidebar">
+            <ul class="sidebar-nav">
+                <li><a href="#dashboard-tab">Dashboard</a></li>
+                <li><a href="#modules-tab">Module Management</a></li>
+                <li><a href="#users-tab">User Management</a></li>
+                <li><a href="#admins-tab">Admin Management</a></li>
+                <li><a href="#system-tab">System Monitoring</a></li>
+                <li><a href="#logs-tab">Activity Logs</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="admin-content">
+            <!-- Dashboard Tab - Overview statistics and charts -->
+            <section id="dashboard-tab" class="tab-content">
+                <h2>Dashboard</h2>
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <h3>Active Users</h3>
+                        <p class="stat-value">1,245</p>
+                        <p class="stat-change positive">+12% this week</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Module Completions</h3>
+                        <p class="stat-value">3,892</p>
+                        <p class="stat-change positive">+8% this week</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Tokens Awarded</h3>
+                        <p class="stat-value">15,780</p>
+                        <p class="stat-change positive">+10% this week</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>System Health</h3>
+                        <p class="stat-value">Excellent</p>
+                        <p class="stat-change neutral">No issues detected</p>
+                    </div>
+                </div>
+                
+                <div class="dashboard-charts">
+                    <div class="chart-container">
+                        <h3>User Activity (Last 30 Days)</h3>
+                        <div class="chart-placeholder">Chart data will be loaded here</div>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Module Completion Rates</h3>
+                        <div class="chart-placeholder">Chart data will be loaded here</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Module Management Tab - CRUD operations for learning modules -->
+            <section id="modules-tab" class="tab-content">
+                <h2>Module Management</h2>
+                <div class="section-header">
+                    <div class="search-container">
+                        <input type="text" id="module-search" placeholder="Search modules...">
+                        <button class="search-btn">Search</button>
+                    </div>
+                    <button id="add-module-btn" class="primary-btn">Add New Module</button>
+                </div>
+                
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Module Title</th>
+                            <th>Difficulty</th>
+                            <th>Token Reward</th>
+                            <th>Completions</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ICP Basics</td>
+                            <td>Beginner</td>
+                            <td>50</td>
+                            <td>487</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Smart Contracts 101</td>
+                            <td>Intermediate</td>
+                            <td>100</td>
+                            <td>256</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Advanced Canister Development</td>
+                            <td>Advanced</td>
+                            <td>200</td>
+                            <td>124</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- User Management Tab - View and manage user accounts -->
+            <section id="users-tab" class="tab-content">
+                <h2>User Management</h2>
+                <div class="section-header">
+                    <div class="search-container">
+                        <input type="text" id="user-search" placeholder="Search users...">
+                        <button class="search-btn">Search</button>
+                    </div>
+                </div>
+                
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Username</th>
+                            <th>Modules Completed</th>
+                            <th>Token Balance</th>
+                            <th>Last Active</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>user-001</td>
+                            <td>alice.principal</td>
+                            <td>12</td>
+                            <td>845</td>
+                            <td>Today, 2:15 PM</td>
+                            <td>
+                                <button class="view-btn">View</button>
+                                <button class="suspend-btn">Suspend</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>user-002</td>
+                            <td>bob.principal</td>
+                            <td>8</td>
+                            <td>520</td>
+                            <td>Yesterday, 10:30 AM</td>
+                            <td>
+                                <button class="view-btn">View</button>
+                                <button class="suspend-btn">Suspend</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>user-003</td>
+                            <td>charlie.principal</td>
+                            <td>15</td>
+                            <td>1240</td>
+                            <td>Today, 9:45 AM</td>
+                            <td>
+                                <button class="view-btn">View</button>
+                                <button class="suspend-btn">Suspend</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Admin Management Tab - Add and manage admin accounts -->
+            <section id="admins-tab" class="tab-content">
+                <h2>Admin Management</h2>
+                <div class="section-header">
+                    <button id="add-admin-btn" class="primary-btn">Add New Admin</button>
+                </div>
+                
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Admin ID</th>
+                            <th>Principal ID</th>
+                            <th>Role</th>
+                            <th>Last Login</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>admin-001</td>
+                            <td>hvybx-ixqpq-sy4...</td>
+                            <td>Super Admin</td>
+                            <td>Today, 3:20 PM</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="remove-btn">Remove</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>admin-002</td>
+                            <td>2vxsx-fae-12s...</td>
+                            <td>Content Manager</td>
+                            <td>Yesterday, 5:15 PM</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="remove-btn">Remove</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- System Monitoring Tab - View canister metrics and system health -->
+            <section id="system-tab" class="tab-content">
+                <h2>System Monitoring</h2>
+                
+                <div class="system-metrics">
+                    <div class="metric-card">
+                        <h3>Cycle Balance</h3>
+                        <p id="metric-cycle_balance">10,000,000</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Canister Memory</h3>
+                        <p id="metric-canister_memory">56.2MB / 100MB</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>HTTP Requests</h3>
+                        <p id="metric-http_requests">1,250 / day</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Active Users</h3>
+                        <p id="metric-active_users">120 online</p>
+                    </div>
+                </div>
+                
+                <div class="system-actions">
+                    <button class="secondary-btn">Refresh Metrics</button>
+                    <button class="primary-btn">Top Up Cycles</button>
+                </div>
+                
+                <div class="chart-container full-width">
+                    <h3>System Performance (Last 7 Days)</h3>
+                    <div class="chart-placeholder">Performance chart will be loaded here</div>
+                </div>
+            </section>
+
+            <!-- Activity Logs Tab - View and filter system activity logs -->
+            <section id="logs-tab" class="tab-content">
+                <h2>Activity Logs</h2>
+                <div class="section-header">
+                    <div class="log-filter">
+                        <select id="log-level-filter" aria-label="Filter logs by level">
+                            <option value="all">All Levels</option>
+                            <option value="info">Info</option>
+                            <option value="warning">Warning</option>
+                            <option value="error">Error</option>
+                        </select>
+                        <select id="log-date-filter" aria-label="Filter logs by date range">
+                            <option value="today">Today</option>
+                            <option value="yesterday">Yesterday</option>
+                            <option value="week">Last 7 Days</option>
+                            <option value="month">Last 30 Days</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="log-container">
+                    <div class="log-entry info">
+                        <span class="log-time">2023-04-03 14:25:32</span>
+                        <span class="log-level">INFO</span>
+                        <span class="log-message">User alice.principal completed module "ICP Basics"</span>
+                    </div>
+                    <div class="log-entry warning">
+                        <span class="log-time">2023-04-03 12:18:45</span>
+                        <span class="log-level">WARNING</span>
+                        <span class="log-message">High memory usage detected (85%)</span>
+                    </div>
+                    <div class="log-entry info">
+                        <span class="log-time">2023-04-03 10:05:12</span>
+                        <span class="log-level">INFO</span>
+                        <span class="log-message">Admin john.principal updated module "Smart Contracts 101"</span>
+                    </div>
+                    <div class="log-entry error">
+                        <span class="log-time">2023-04-02 23:17:38</span>
+                        <span class="log-level">ERROR</span>
+                        <span class="log-message">Failed login attempt for user bob.principal (3rd attempt)</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Module Modal - Form for adding/editing module content -->
+    <div id="module-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add/Edit Module</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="module-form">
+                    <div class="form-group">
+                        <label for="module-title">Module Title</label>
+                        <input type="text" id="module-title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="module-description">Description</label>
+                        <textarea id="module-description" name="description" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="module-difficulty">Difficulty Level</label>
+                        <select id="module-difficulty" name="difficulty" required>
+                            <option value="Beginner">Beginner</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="module-prerequisites">Prerequisites (Optional)</label>
+                        <select id="module-prerequisites" name="prerequisites" multiple>
+                            <option value="icp-basics">ICP Basics</option>
+                            <option value="smart-contracts-101">Smart Contracts 101</option>
+                            <option value="motoko-fundamentals">Motoko Fundamentals</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="module-token-reward">Token Reward</label>
+                        <input type="number" id="module-token-reward" name="tokenReward" min="0" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="secondary-btn close-modal-btn">Cancel</button>
+                        <button type="submit" class="primary-btn">Save Module</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="admin-footer">
+        <p>&copy; 2023 CN University. All rights reserved. | Canister ID: c2pix-yaaaa-aaaah-ardha-cai</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="dist/admin.bundle.js"></script>
+</body>
+</html> 

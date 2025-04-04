@@ -1,0 +1,540 @@
+/**
+ * CN University Admin Dashboard - Styles
+ * ----------------------------------
+ * This stylesheet contains all custom styles for the admin dashboard.
+ * It uses a consistent color scheme and component styling to maintain
+ * visual coherence throughout the admin interface.
+ * 
+ * Color Palette:
+ * - Dark backgrounds: #1A1914, #332E29, #383430
+ * - Medium backgrounds: #4C4338, #685C4D
+ * - Text/borders: #B9A68B
+ * - Accent: #066aab
+ * - Status colors: #4CAF50 (positive), #F44336 (negative)
+ * 
+ * Version: 1.0.0
+ * Date: April 3, 2023
+ */
+
+/* CN University Admin CSS */
+
+/* Base Structure */
+.admin-body {
+    background-color: #332E29;
+    color: #B9A68B;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #1A1914;
+    border-bottom: 1px solid #4C4338;
+}
+
+.admin-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.admin-header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #B9A68B;
+}
+
+.admin-container {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    min-height: calc(100vh - 135px);
+}
+
+.admin-sidebar {
+    background-color: #1A1914;
+    padding: 1.5rem 0;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-nav a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: #B9A68B;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar-nav a:hover, 
+.sidebar-nav a.active {
+    background-color: #4C4338;
+    color: #ffffff;
+}
+
+.admin-content {
+    padding: 2rem;
+    background-color: #332E29;
+}
+
+.admin-content h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #B9A68B;
+    border-bottom: 1px solid #4C4338;
+    padding-bottom: 0.5rem;
+}
+
+.admin-footer {
+    background-color: #1A1914;
+    color: #B9A68B;
+    text-align: center;
+    padding: 1rem;
+    border-top: 1px solid #4C4338;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #4C4338;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #685C4D;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: #B9A68B;
+}
+
+.close-modal {
+    color: #B9A68B;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: #066aab;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #B9A68B;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #685C4D;
+    border-radius: 4px;
+    background-color: #383430;
+    color: #B9A68B;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #066aab;
+    outline: none;
+}
+
+.form-group select[multiple] {
+    height: 120px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Button Styles */
+.primary-btn, 
+.secondary-btn, 
+.delete-btn, 
+.edit-btn, 
+.view-btn,
+.suspend-btn,
+.remove-btn,
+.search-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.primary-btn {
+    background-color: #066aab;
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: #0558a1;
+}
+
+.secondary-btn {
+    background-color: #4C4338;
+    color: #B9A68B;
+    border: 1px solid #685C4D;
+}
+
+.secondary-btn:hover {
+    background-color: #585040;
+}
+
+.edit-btn, .view-btn {
+    background-color: #066aab;
+    color: white;
+}
+
+.delete-btn, .remove-btn {
+    background-color: #b62b3a;
+    color: white;
+}
+
+.suspend-btn {
+    background-color: #905821;
+    color: white;
+}
+
+.suspend-btn.warning-btn {
+    background-color: #066aab;
+}
+
+.search-btn {
+    background-color: #4C4338;
+    color: #B9A68B;
+}
+
+/* Search Box Styles */
+.search-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.search-container input {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border: 1px solid #685C4D;
+    border-radius: 4px;
+    background-color: #383430;
+    color: #B9A68B;
+}
+
+.search-container input:focus {
+    border-color: #066aab;
+    outline: none;
+}
+
+/* Dashboard Styles */
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background-color: #4C4338;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.stat-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #B9A68B;
+    font-size: 1rem;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #066aab;
+    margin: 0.5rem 0;
+}
+
+.stat-change {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.stat-change.positive {
+    color: #4CAF50;
+}
+
+.stat-change.negative {
+    color: #F44336;
+}
+
+.stat-change.neutral {
+    color: #9E9E9E;
+}
+
+.dashboard-charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+}
+
+.chart-container {
+    background-color: #4C4338;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.chart-container h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #B9A68B;
+    font-size: 1rem;
+}
+
+.chart-placeholder {
+    height: 200px;
+    background-color: #383430;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #685C4D;
+}
+
+.chart-container.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Section Header */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Table Styles */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+}
+
+.admin-table th {
+    background-color: #4C4338;
+    color: #B9A68B;
+    font-weight: 500;
+    border-bottom: 2px solid #685C4D;
+}
+
+.admin-table tr:hover {
+    background-color: #383430;
+}
+
+.admin-table td {
+    border-bottom: 1px solid #4C4338;
+}
+
+.admin-table button {
+    margin-right: 0.5rem;
+}
+
+/* System Metrics */
+.system-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.metric-card {
+    background-color: #4C4338;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.metric-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #B9A68B;
+    font-size: 1rem;
+}
+
+.system-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Log Filter Styles */
+.log-filter {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.log-filter select {
+    padding: 0.5rem;
+    border: 1px solid #685C4D;
+    border-radius: 4px;
+    background-color: #383430;
+    color: #B9A68B;
+}
+
+/* Log Entries */
+.log-container {
+    background-color: #1A1914;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.log-entry {
+    padding: 0.75rem;
+    border-bottom: 1px solid #4C4338;
+    display: flex;
+    gap: 1rem;
+}
+
+.log-entry:last-child {
+    border-bottom: none;
+}
+
+.log-time {
+    color: #9E9E9E;
+    font-size: 0.9rem;
+    min-width: 150px;
+}
+
+.log-level {
+    font-weight: bold;
+    min-width: 70px;
+}
+
+.log-entry.info .log-level {
+    color: #066aab;
+}
+
+.log-entry.warning .log-level {
+    color: #FFC107;
+}
+
+.log-entry.error .log-level {
+    color: #F44336;
+}
+
+.log-message {
+    flex: 1;
+}
+
+/* Admin User Info */
+#admin-user-info {
+    color: #B9A68B;
+    padding: 0.5rem 1rem;
+    background-color: #383430;
+    border-radius: 4px;
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .admin-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .search-container,
+    .log-filter {
+        width: 100%;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .modal-content {
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    .admin-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .dashboard-charts,
+    .system-metrics {
+        grid-template-columns: 1fr;
+    }
+} 
