@@ -81,4 +81,25 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contact
 
-If you have any questions or feedback, please reach out to us at contact@cnuniversity.io 
+If you have any questions or feedback, please reach out to us at contact@cnuniversity.io
+
+## Admin Dashboard
+
+The admin dashboard provides a comprehensive interface for managing the CN University platform. It includes:
+
+- **Dashboard Overview**: Statistics and charts showing platform activity
+- **Module Management**: Create, edit, and delete learning modules
+- **User Management**: View and manage user accounts
+- **Admin Management**: Add and remove admin users
+- **System Monitoring**: Monitor canister cycles, memory usage, and performance
+- **Activity Logs**: View system activity and filter logs by level and date
+
+### Accessing the Admin Dashboard
+
+The admin dashboard is available at `/admin/index.html` and requires admin credentials to access.
+
+### Technical Notes
+
+- The admin dashboard uses a bundled JavaScript file that includes all UI functionality
+- All data operations currently use mock implementations and would need to be connected to backend canisters in production
+- The admin interface is fully responsive and works on desktop and mobile devices 
